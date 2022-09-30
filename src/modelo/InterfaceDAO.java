@@ -21,7 +21,7 @@ public interface InterfaceDAO {
     public void crearCuentaCliente(Cuenta cuent,String idCliente);
     public void consultarCuenta(String idCuenta);
     public void realizarMovimiento(String idCuenta);
-    public void consultarMovimiento(String idMoviento,String idCuenta);
+    public void consultarMovimiento(String idMovimiento,String idCuenta);
     
     
     
