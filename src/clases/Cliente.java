@@ -5,6 +5,7 @@
  */
 package clases;
 import clases.Cuenta;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -130,8 +131,51 @@ public class Cliente {
         this.cuentas = cuentas;
     }
     
+    public void setDatos(Integer id){
+        this.id = id;
+        this.firtsName = utilidades.Utilidades.introducirCadena("Introducir nombre: ");
+        this.lastName = utilidades.Utilidades.introducirCadena("Introducir apellidos: ");
+        this.middleIntial = utilidades.Utilidades.introducirCadena("Introducir Inicial de primer apellido: ");
+        this.street = utilidades.Utilidades.introducirCadena("Introducir calle: ");
+        this.city = utilidades.Utilidades.introducirCadena("Introducir ciudad: ");
+        this.state = utilidades.Utilidades.introducirCadena("Introducri estado: ");
+        this.zip = utilidades.Utilidades.leerInt("Introducir zip: ");
+        this.phone = utilidades.Utilidades.leerInt("Introducir telefono: ");
+        this.email = utilidades.Utilidades.introducirCadena("Introducir email: ");
+        
+    }
     
+    public void getDatos() {
+        System.out.println("Id: "+this.id);
+        System.out.println("Nombre: "+this.firtsName+" "+this.lastName);
+        System.out.println("Inicial: "+this.middleIntial);
+        System.out.println("Calle: "+this.street);
+        System.out.println("Ciudad: "+this.city);
+        System.out.println("Estado: "+this.state);
+        System.out.println("Zip: "+this.zip);
+        System.out.println("Telfono: "+this.phone);
+                
+    }
     
+    public void setCuenta(Cuenta cu){
+        this.cuentas.add(cu);
+        
+    }
+           
+    public void buscarCuenta(Integer id){
+        
+        for (int i = 0; i < cuentas.size(); i++) {
+            if(cuentas.get(i).equals(id)){
+            cuentas.get(id).getDatos();
+            }
+        }
+    }
+    
+    public void buscarClCu(){
+        for (int i = 0; i < cuentas.size(); i++){
+            cuentas.get(i).getDatos();
+        }
+    }
           
     
 }

@@ -15,13 +15,13 @@ import clases.Cuenta;
 public interface InterfaceDAO {
     
     public void crearCliente(Cliente client);
-    public void consultarCliente(String idCliente);
-    public void consultarCuentaCliente(String idCliente, String idCuenta);
-    public void agregarCuenta(Cuenta cuent, String idCuenta);
-    public void crearCuentaCliente(Cuenta cuent,String idCliente);
-    public void consultarCuenta(String idCuenta);
-    public void realizarMovimiento(String idCuenta);
-    public void consultarMovimiento(String idMoviento,String idCuenta);
+    public void consultarCliente(Integer idCliente);
+    public void consultarCuentaCliente(Integer idCliente, Integer idCuenta);
+    public void agregarCuenta(Cuenta cuent, Integer idCuenta);
+    public void crearCuentaCliente(Cuenta cuent,Integer idCliente);
+    public void consultarCuenta(Integer idCuenta);
+    public void realizarMovimiento(Integer idCuenta);
+    public void consultarMovimiento(Integer idMoviento,Integer idCuenta);
     
     
     

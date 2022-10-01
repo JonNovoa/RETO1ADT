@@ -71,6 +71,20 @@ public class Movimientos {
     }
     
     
-
+    public void setDatos(){
+       this.id = utilidades.Utilidades.leerInt();
+       this.fechaMovimiento = utilidades.Utilidades.leerFecha();
+       this.cantidad = utilidades.Utilidades.leerFloat(); 
+       this.balance = utilidades.Utilidades.leerFloat();
+       this.descripcion = utilidades.Utilidades.introducirCadena();       
+    }
+    
+    public void getDatos(){
+        System.out.println("Id: " + this.id);
+        System.out.println("Fecha de movimiento: "+this.fechaMovimiento);
+        System.out.println("Cantidad: " + this.cantidad);
+        System.out.println("Balance: " + this.balance);
+        System.out.println("Descripcion: "+this.descripcion);
+    }
     
 }

@@ -101,9 +101,47 @@ public class Cuenta {
         return movimiento;
     }
     
+    public void setDatos(Integer id){
+ 
+        this.id = id;
+        this.description = utilidades.Utilidades.introducirCadena("Introducir descripcion: ");
+        this.balance = utilidades.Utilidades.leerFloat("Introducir balance: ");
+        this.credito = utilidades.Utilidades.leerFloat("Introducir credito: ");
+        this.inicioBalance = utilidades.Utilidades.leerFloat("Introducir balance inicial:");
+        this.fechaInicioBalance = utilidades.Utilidades.leerFecha("Introducir fecha: ");
+        
+     
+    }
     
+    public void getDatos(){
+        System.out.println("Id: "+this.id);
+        System.out.println("Descripcion: "+this.description);
+        System.out.println("Balance: "+this.balance);
+        System.out.println("Credito: "+this.credito);
+        System.out.println("Inicio Blance: "+this.inicioBalance);
+        System.out.println("Fecha Inicio Balance: "+this.fechaInicioBalance);
+        for (int i = 0; i < movimiento.size(); i++) {
+            System.out.println(movimiento.get(i));
+        }
+    }
     
+    public void setMovimientoCu(){
+        Movimientos mov = new Movimientos();
+        mov.setDatos();
+        this.movimiento.add(mov);
+    }
     
+
+    public void getMovimientoCu(Integer idMovimiento) {
+         Movimientos mov;
+        for (int i = 0; i < movimiento.size(); i++) {
+            mov = movimiento.get(i);
+            if(movimiento.get(i).equals(idMovimiento)){
+                mov.getDatos();
+            }
+        }
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
     
 }
