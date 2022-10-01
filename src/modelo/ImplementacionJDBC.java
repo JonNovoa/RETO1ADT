@@ -5,6 +5,9 @@
  */
 package modelo;
 
+import clases.Cliente;
+import clases.Cuenta;
+import clases.Movimientos;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -15,7 +18,7 @@ import java.util.ResourceBundle;
  *
  * @author somor
  */
-public class ImplementacionJDBC {
+public class ImplementacionJDBC implements InterfaceDAO{
 
     private Connection conex;
     private PreparedStatement stmt;
@@ -23,12 +26,14 @@ public class ImplementacionJDBC {
     private String url;
     private String usuario;
     private String contraseña;
+    private String driver;
 
     public ImplementacionJDBC() {
         this.archivoConfig = ResourceBundle.getBundle("modelo.config");
         this.url = archivoConfig.getString("Conn");
-        this.usuario = archivoConfig.getString("BDUser");
+        this.usuario = archivoConfig.getString("BDuser");
         this.contraseña = archivoConfig.getString("BDPass");
+        this.driver = archivoConfig.getString("Driver");
     }
 
     public void openConnection() {
@@ -49,5 +54,47 @@ public class ImplementacionJDBC {
 			conex.close();
 		}
 	}
+
+    @Override
+    public void crearCliente(Cliente client) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void consultarCliente(Integer idCliente) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void consultarCuentaCliente(Integer idCliente, Integer idCuenta) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void agregarCuenta(Integer idCliente, Integer idCuenta) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void crearCuentaCliente(Cuenta cuent, Integer idCliente) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void consultarCuenta(Integer idCuenta) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void realizarMovimiento(Movimientos mov, Integer idCuenta) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void consultarMovimiento(Integer idMoviento, Integer idCuenta) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
 
 }

@@ -6,6 +6,7 @@
 package clases;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -14,12 +15,12 @@ import java.time.LocalDate;
 public class Movimientos {
         
     private Integer id;
-    private LocalDate fechaMovimiento;
+    private LocalDateTime fechaMovimiento;
     private Float cantidad; 
     private Float balance;
     private String descripcion;
 
-    public Movimientos(Integer id, LocalDate fechaMovimiento, Float cantidad, Float balance, String descripcion) {
+    public Movimientos(Integer id, LocalDateTime fechaMovimiento, Float cantidad, Float balance, String descripcion) {
         this.id = id;
         this.fechaMovimiento = fechaMovimiento;
         this.cantidad = cantidad;
@@ -34,7 +35,7 @@ public class Movimientos {
         return id;
     }
 
-    public LocalDate getFechaMovimiento() {
+    public LocalDateTime getFechaMovimiento() {
         return fechaMovimiento;
     }
 
@@ -54,7 +55,7 @@ public class Movimientos {
         this.id = id;
     }
 
-    public void setFechaMovimiento(LocalDate fechaMovimiento) {
+    public void setFechaMovimiento(LocalDateTime fechaMovimiento) {
         this.fechaMovimiento = fechaMovimiento;
     }
 
@@ -73,7 +74,7 @@ public class Movimientos {
     
     public void setDatos(){
        this.id = utilidades.Utilidades.leerInt();
-       this.fechaMovimiento = utilidades.Utilidades.leerFecha();
+       this.fechaMovimiento = fechaMovimiento;
        this.cantidad = utilidades.Utilidades.leerFloat(); 
        this.balance = utilidades.Utilidades.leerFloat();
        this.descripcion = utilidades.Utilidades.introducirCadena();       

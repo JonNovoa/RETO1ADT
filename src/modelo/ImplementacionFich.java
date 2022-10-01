@@ -7,6 +7,7 @@ package modelo;
 
 import clases.Cliente;
 import clases.Cuenta;
+import clases.Movimientos;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -46,8 +47,7 @@ public class ImplementacionFich implements InterfaceDAO {
                     fos = new FileOutputStream(cl);
                     moos = new MiObjectOutputStream(fos);
 
-                    c = new Cliente();
-                    c.setDatos(id);
+                    c = client;                    
                     moos.writeObject(c);
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(ImplementacionFich.class.getName()).log(Level.SEVERE, null, ex);
@@ -88,7 +88,7 @@ public class ImplementacionFich implements InterfaceDAO {
             System.out.println("Id repetido");
         }
 
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -132,7 +132,7 @@ public class ImplementacionFich implements InterfaceDAO {
             System.out.println("Crear fichero primero");
         }
 
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -178,7 +178,7 @@ public class ImplementacionFich implements InterfaceDAO {
     }
 
     @Override
-    public void agregarCuenta(Cuenta cuent, Integer idCuenta) {
+    public void agregarCuenta(Integer idDliente, Integer idCuenta) {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
 
@@ -332,7 +332,7 @@ public class ImplementacionFich implements InterfaceDAO {
     }
 
     @Override
-    public void realizarMovimiento(Integer idCuenta) {
+    public void realizarMovimiento(Movimientos mov, Integer idCuenta) {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         Cuenta cu;
