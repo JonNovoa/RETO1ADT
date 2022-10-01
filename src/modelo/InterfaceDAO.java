@@ -14,7 +14,7 @@ import clases.Cuenta;
  */
 public interface InterfaceDAO {
     
-    public void crearCliente(Cliente client);
+   public void crearCliente(Cliente client);
     public void consultarCliente(String idCliente);
     public void consultarCuentaCliente(String idCliente, String idCuenta);
     public void agregarCuenta(Cuenta cuent, String idCuenta);
